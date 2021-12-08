@@ -3,12 +3,17 @@
 
 </style>
 <script>
+    import {admin} from './admin';
     import { createEventDispatcher } from 'svelte';
     let naslov = "";
     const dispatch = createEventDispatcher();
 
     function dodaj() {
+        if(naslov == "admin")
+        admin.set(!$admin);
+        else
         dispatch('novKomad', {"naslov":naslov, "votes":1});
+        naslov = ""
     }
 </script>
 <div class="komad">

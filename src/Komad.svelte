@@ -1,8 +1,20 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+	import {admin} from "./admin"
+	let ad;
+	admin.subscribe(value => {
+		ad = value;
+	})
+    let naslov = "";
+    const dispatch = createEventDispatcher();
+    function destruct() {
+        dispatch('removeKomad', komad);
+    }
 	export let komad;
-	// let votes = komad.votes;
 	const addVote = () => komad.votes++
 	const remVote = () => komad.votes--
+
+
 </script>
 <style>
 
@@ -39,8 +51,15 @@
 	<span></span>
 	<div class="voting">
 		<h2 on:click={addVote} class="button green">+</h2>
+		{#if ad}
+		<input bind:value={komad.votes}>
+		{:else}
 		<h2>{komad.votes}</h2>
+		{/if}
 		<h2 on:click={remVote} class="button red">-</h2>
+		{#if ad}
+		<h2 on:click={destruct} class="button red">x</h2>
+		{/if}
 	</div>
 
 	

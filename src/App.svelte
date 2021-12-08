@@ -1,4 +1,5 @@
 <script>
+	import {admin} from "./admin";
 	import DodajKomad from './DodajKomad.svelte';
 	import Komad from './Komad.svelte';
 		let muzke = [
@@ -7,16 +8,24 @@
 		{"naslov": "to je mikic","votes": 0},
 		]
 	function novKomad(event) {
+		console.log(event.detail)
 		muzke = [event.detail,...muzke ]
+		
 	}
+	function removeKomad(event) {
+		console.log(event.detail)
+		muzke = muzke.filter(item => item !== event.detail)
+	}
+	
 
 </script>
 <main>
+	<!-- <input type="checkbox" bind:checked={$admin}> -->
 	<DodajKomad on:novKomad={novKomad}></DodajKomad>
 	
 	<div class="komadi">
 		{#each muzke as komad}
-			<Komad bind:komad></Komad>
+			<Komad bind:komad on:removeKomad={removeKomad}></Komad>
 		{/each}
 	</div>
 	
