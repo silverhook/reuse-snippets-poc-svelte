@@ -1,6 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
-	import {admin} from "./admin"
+	import {admin} from "./store"
 	let ad;
 	admin.subscribe(value => {
 		ad = value;
@@ -46,19 +46,19 @@
 	}
 </style>
 
-<div class="komad">
+<div class="komad" >
 	<h1>{komad.naslov}</h1>
 	<span></span>
 	<div class="voting">
-		<h2 on:click={addVote} class="button green">+</h2>
+		<h2 on:click={addVote} class="button green noselect">+</h2>
 		{#if ad}
-		<input bind:value={komad.votes}>
+		<input type="number" bind:value={komad.votes}>
 		{:else}
 		<h2>{komad.votes}</h2>
 		{/if}
-		<h2 on:click={remVote} class="button red">-</h2>
+		<h2 on:click={remVote} class="button red noselect">-</h2>
 		{#if ad}
-		<h2 on:click={destruct} class="button red">x</h2>
+		<h2 on:click={destruct} class="button red noselect">x</h2>
 		{/if}
 	</div>
 

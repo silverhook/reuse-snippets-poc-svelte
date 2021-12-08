@@ -1,5 +1,5 @@
 <script>
-	import {admin} from "./admin";
+	import {admin} from "./store";
 	import DodajKomad from './DodajKomad.svelte';
 	import Komad from './Komad.svelte';
 		let muzke = [
