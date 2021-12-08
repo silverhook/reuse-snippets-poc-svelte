@@ -1,9 +1,5 @@
 <style>
-	.komad {
-		border: 3px solid gray;
-		border-radius: var(--border-radius);
-        display: flex;
-	}
+
 
 </style>
 <script>

@@ -5,17 +5,7 @@
 	const remVote = () => komad.votes--
 </script>
 <style>
-	.komad {
-		/* border: 1px solid black; */
-		background-color: #E7E7E7;
-		border-radius: var(--border-radius);
-		display: flex;
-		align-items: center;
-		width: 100%;
-		padding: 0.5rem;
-		margin: 0.5rem
-		
-	}
+
 	h2, h1 {
 		font-size: 1.5rem;
 		display: inline-block;
@@ -48,8 +38,7 @@
 	<h1>{komad.naslov}</h1>
 	<span></span>
 	<div class="voting">
-		<h2 on:click
-		={addVote} class="button green">+</h2>
+		<h2 on:click={addVote} class="button green">+</h2>
 		<h2>{komad.votes}</h2>
 		<h2 on:click={remVote} class="button red">-</h2>
 	</div>
