@@ -10,9 +10,22 @@
     function destruct() {
         dispatch('removeKomad', komad);
     }
+
 	export let komad;
-	const addVote = () => komad.votes++
-	const remVote = () => komad.votes--
+	const addVote = () => {
+		let kom = komad;
+		kom.votes++;
+		dispatch('modifyKomad', kom)
+	}
+	const remVote = () => {
+		let kom = komad;
+		kom.votes--;
+		dispatch('modifyKomad',kom)
+	}
+	const modVote = () => {
+		let kom = komad;
+		dispatch('modifyKomad',kom)
+	}
 
 
 </script>
@@ -52,7 +65,7 @@
 	<div class="voting">
 		<h2 on:click={addVote} class="button green noselect">+</h2>
 		{#if ad}
-		<input type="number" bind:value={komad.votes}>
+		<input type="number" bind:value={komad.votes} on:blur={modVote} id="adsf">
 		{:else}
 		<h2>{komad.votes}</h2>
 		{/if}

@@ -1,21 +1,33 @@
 <script>
-	import {admin} from "./store";
+	import {admin, komadi} from "./store";
 	import DodajKomad from './DodajKomad.svelte';
 	import Komad from './Komad.svelte';
-		let muzke = [
-		{"naslov": "fazlja","votes": 0},
-		{"naslov": "dusan","votes": 0},
-		{"naslov": "to je mikic","votes": 0},
-		]
+		// let muzke = [
+		// {"naslov": "fazlja","votes": 0},
+		// {"naslov": "dusan","votes": 0},
+		// {"naslov": "to je mikic","votes": 0},
+		// ]
+	let muzke = $komadi;
+	$: {muzke = $komadi;}
+	console.log("komadi", komadi)
+	console.log("muzke", muzke)
 	function novKomad(event) {
-		console.log(event.detail)
-		muzke = [event.detail,...muzke ]
+		// console.log(event.detail)
+			$komadi = event.detail;
 		
 	}
 	function removeKomad(event) {
-		console.log(event.detail)
-		muzke = muzke.filter(item => item !== event.detail)
+		event.detail.remove = true;
+		$komadi = event.detail;
+		// muzke = muzke.filter(item => item !== event.detail)
 	}
+	function modifyKomad(event) {
+		event.detail.remove = false;
+		console.log(event.detail)
+		$komadi = event.detail;
+		// console.log(event.detail.naslov)
+	}
+	console.log(muzke)
 	
 
 </script>
@@ -25,7 +37,7 @@
 	
 	<div class="komadi">
 		{#each muzke as komad}
-			<Komad bind:komad on:removeKomad={removeKomad}></Komad>
+			<Komad bind:komad on:removeKomad={removeKomad} on:modifyKomad={modifyKomad}></Komad>
 		{/each}
 	</div>
 	
