@@ -1,10 +1,5 @@
 <style>
-    input {
-        border: none;
-        background: #222;
-        color: white;
-        align-items: baseline;
-    }
+
     .text {
         min-width: 20%;
         width: max-content;
@@ -33,7 +28,7 @@
 <div class="komad">
 <form  on:submit|preventDefault={dodaj}>
     <input type="text" bind:value={naslov} placeholder="Naslov in izvajalec pesmi" class="text">
-    <input type="submit" value="Dodaj Komad">  
+    <input type="submit" value="+">  
 </form>
 <h5 on:click={toggleSort} class="noselect">{#if $sort}▼ {:else}▲{/if}
 </h5>

@@ -32,19 +32,26 @@
 <style>
 
 	h2, h1 {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		display: inline-block;
 		margin: 0;
 	}
+
 	h2 {
 		align-self: flex-end;
 	}
 	div.voting {
+		display: flex;
+		flex-wrap: nowrap;
 		margin-left: auto;
+	}
+	div.voting * {
+		margin: 0 0.1em;
 	}
 	.button {
 		color: #E7E7E7;
-		background-color: #CCC;
+		opacity: 0.3;
+		background-color: rgb(0, 0, 0);
 		border-radius: 50%;
 		width: 1.5em;
 		height: 1.5em;
@@ -63,13 +70,13 @@
 	<h1>{komad.naslov}</h1>
 	<span></span>
 	<div class="voting">
-		<h2 on:click={addVote} class="button green noselect">+</h2>
+		<h2 on:click={addVote} class="button  noselect">+</h2>
 		{#if ad}
 		<input type="number" bind:value={komad.votes} on:blur={modVote} id="adsf">
 		{:else}
 		<h2>{komad.votes}</h2>
 		{/if}
-		<h2 on:click={remVote} class="button red noselect">-</h2>
+		<h2 on:click={remVote} class="button  noselect">-</h2>
 		{#if ad}
 		<h2 on:click={destruct} class="button red noselect">x</h2>
 		{/if}

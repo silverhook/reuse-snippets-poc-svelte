@@ -8,10 +8,7 @@
 		// {"naslov": "to je mikic","votes": 0},
 		// ]
 	let muzke = $komadi;
-	$: {
-		muzke = $komadi;
-		
-		}
+	$: {muzke = $komadi;}
 	console.log("komadi", komadi)
 	console.log("muzke", muzke)
 	function novKomad(event) {
@@ -36,9 +33,10 @@
 </script>
 <main>
 	<!-- <input type="checkbox" bind:checked={$admin}> -->
-	<DodajKomad on:novKomad={novKomad}></DodajKomad>
+	
 	
 	<div class="komadi">
+		<DodajKomad on:novKomad={novKomad}></DodajKomad>
 		{#each $sort ? [...muzke].sort((a,b) => (b.votes - a.votes)):muzke as komad}
 			<Komad bind:komad on:removeKomad={removeKomad} on:modifyKomad={modifyKomad}></Komad>
 		{/each}
@@ -54,7 +52,9 @@
 			}
 	div.komadi {
 		align-self: center;
-		width: 80%;
+		min-width: 80%;
+		margin: 0;
+		padding: 1em;
 	}
 
 	@media (min-width: 640px) {
