@@ -31,6 +31,9 @@
 	
 
 </script>
+<svelte:head>
+	<title>Requesti Muzko tle</title>
+</svelte:head>
 <main>
 	<!-- <input type="checkbox" bind:checked={$admin}> -->
 	
