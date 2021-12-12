@@ -38,13 +38,11 @@
 
 </script>
 <style>
-
 	h2, h1 {
 		font-size: 1.4rem;
 		display: inline-block;
 		margin: 0;
 	}
-
 	h2 {
 		align-self: flex-end;
 	}
@@ -92,17 +90,17 @@
 	<h1>{komad.naslov}</h1>
 	<span></span>
 	<div class="voting" >
-		<h2 on:click={addVote} class="button  noselect">+</h2>
+		<h2 on:click={addVote} class="button noselect">+</h2>
 		{#if ad}
 		<input type="number" bind:value={komad.votes} on:keypress={keypress} on:blur={modVote} id="adsf">
 		{:else}
 		<h2>{komad.votes}</h2>
 		{/if}
-		<h2 on:click={remVote} class="button  noselect">-</h2>
+		<h2 on:click={remVote} class="button noselect">-</h2>
 		{#if ad}
 		<div class="triangles">
-			<a href="https://www.youtube.com/results?search_query={komad.naslov}" target="_blank"><Triange yt={true}></Triange></a>
-			<a href="https://d.oliwerix.com/down/{komad.naslov}" download><Triange toggle={true}></Triange></a>
+			<a href="https://www.youtube.com/results?search_query={komad.naslov}" target="_blank"><Triange yt={true} /></a>
+			<a href="https://d.oliwerix.com/down/{komad.naslov}" download><Triange toggle={true} /></a>
 		</div>
 
 			<h2 on:click={destruct} class="button red noselect">x</h2>
