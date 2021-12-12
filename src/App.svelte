@@ -44,12 +44,14 @@
 	
 	
 </main>
-
+<footer>
+	Made with ❤️ by <a href="https://github.com/Oliwerix">@Oliwerix</a>
+</footer>
 <style>
 	main {
 		display: flex;
 		flex-direction: column;
-			}
+	}
 	div.komadi {
 		align-self: center;
 		min-width: 80%;
@@ -62,4 +64,10 @@
 			max-width: none;
 		}
 	}
+	footer {
+		color: #999;
+		text-align: center;
+		padding: 0.2em;
+		margin-top: auto;
+}
 </style>
