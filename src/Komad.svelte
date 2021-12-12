@@ -1,8 +1,8 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import Triange from './Triange.svelte';
-
 	import {admin} from "./store"
+
 	let ad;
 	admin.subscribe(value => {
 		ad = value;
@@ -39,7 +39,7 @@
 </script>
 <style>
 	h2, h1 {
-		font-size: 1.4rem;
+		font-size: 1.1rem;
 		display: inline-block;
 		margin: 0;
 	}
@@ -94,7 +94,7 @@
 		{#if ad}
 		<input type="number" bind:value={komad.votes} on:keypress={keypress} on:blur={modVote} id="adsf">
 		{:else}
-		<h2>{komad.votes}</h2>
+		<h2 class="noselect">{komad.votes}</h2>
 		{/if}
 		<h2 on:click={remVote} class="button noselect">-</h2>
 		{#if ad}

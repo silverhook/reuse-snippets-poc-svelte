@@ -21,7 +21,7 @@
             admin.set(!$admin);
         else
             if(naslov != "")
-                dispatch('novKomad', {"naslov":naslov, "votes":1});
+                dispatch('novKomad', {"naslov":naslov.substring(0, 25), "votes":1});
         naslov = ""
     }
 </script>

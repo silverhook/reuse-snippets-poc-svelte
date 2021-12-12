@@ -8,28 +8,22 @@
 	console.log("komadi", komadi)
 	console.log("muzke", muzke)
 	function novKomad(event) {
-		// console.log(event.detail)
 			$komadi = event.detail;
 		
 	}
 	function removeKomad(event) {
 		event.detail.remove = true;
 		$komadi = event.detail;
-		// muzke = muzke.filter(item => item !== event.detail)
 	}
 	function modifyKomad(event) {
 		event.detail.remove = false;
-		console.log(event.detail)
 		$komadi = event.detail;
-		// console.log(event.detail.naslov)
 	}
 	console.log(muzke)
 	
 
 </script>
-<svelte:head>
-	<title>Requesti Muzko tle</title>
-</svelte:head>
+
 <main>
 	<!-- <input type="checkbox" bind:checked={$admin}> -->
 	
