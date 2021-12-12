@@ -1,5 +1,7 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
+	import Triange from './Triange.svelte';
+
 	import {admin} from "./store"
 	let ad;
 	admin.subscribe(value => {
@@ -26,7 +28,8 @@
 		let kom = komad;
 		dispatch('modifyKomad',kom)
 	}
-
+	
+	
 
 </script>
 <style>
@@ -56,20 +59,34 @@
 		width: 1.5em;
 		height: 1.5em;
 		text-align: center;
+	}
+	.button:hover {
+		opacity: 0.7;
+		transition: ease-in-out 0.1s;
 
+	}
+
+	a:hover {
+		text-decoration: none;
+		color: red;
+		transition: ease-in-out 0.1s;
 	}
 	.red {
 		background-color: rgb(209, 55, 55);;
 	}
-	.green {
-		background-color: rgb(98, 160, 98);
+	input {
+		width: 3em;
+	}
+	.triangles {
+		display: flex;
+		align-items: center;
 	}
 </style>
 
 <div class="komad" >
 	<h1>{komad.naslov}</h1>
 	<span></span>
-	<div class="voting">
+	<div class="voting" >
 		<h2 on:click={addVote} class="button  noselect">+</h2>
 		{#if ad}
 		<input type="number" bind:value={komad.votes} on:blur={modVote} id="adsf">
@@ -78,7 +95,12 @@
 		{/if}
 		<h2 on:click={remVote} class="button  noselect">-</h2>
 		{#if ad}
-		<h2 on:click={destruct} class="button red noselect">x</h2>
+		<div class="triangles">
+			<a href="https://www.youtube.com/results?search_query={komad.naslov}" target="_blank"><Triange yt={true}></Triange></a>
+			<a href="http://d.oliwerix.com:1234/down/{komad.naslov}" download><Triange toggle={true}></Triange></a>
+		</div>
+
+			<h2 on:click={destruct} class="button red noselect">x</h2>
 		{/if}
 	</div>
 

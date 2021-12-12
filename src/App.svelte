@@ -2,11 +2,7 @@
 	import {sort, komadi} from "./store";
 	import DodajKomad from './DodajKomad.svelte';
 	import Komad from './Komad.svelte';
-		// let muzke = [
-		// {"naslov": "fazlja","votes": 0},
-		// {"naslov": "dusan","votes": 0},
-		// {"naslov": "to je mikic","votes": 0},
-		// ]
+
 	let muzke = $komadi;
 	$: {muzke = $komadi;}
 	console.log("komadi", komadi)
@@ -41,7 +37,8 @@
 	<div class="komadi">
 		<DodajKomad on:novKomad={novKomad}></DodajKomad>
 		{#each $sort ? [...muzke].sort((a,b) => (b.votes - a.votes)):muzke as komad}
-			<Komad bind:komad on:removeKomad={removeKomad} on:modifyKomad={modifyKomad}></Komad>
+			
+			<Komad bind:komad on:removeKomad={removeKomad} on:modifyKomad={modifyKomad} />
 		{/each}
 	</div>
 	
