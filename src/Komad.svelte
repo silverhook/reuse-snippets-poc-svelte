@@ -28,7 +28,12 @@
 		let kom = komad;
 		dispatch('modifyKomad',kom)
 	}
-	
+	const keypress = event => {
+		if(event.charCode == 13) {
+			event.target.blur()
+		};
+	}
+
 	
 
 </script>
@@ -83,13 +88,13 @@
 	}
 </style>
 
-<div class="komad" >
+<div class="komad">
 	<h1>{komad.naslov}</h1>
 	<span></span>
 	<div class="voting" >
 		<h2 on:click={addVote} class="button  noselect">+</h2>
 		{#if ad}
-		<input type="number" bind:value={komad.votes} on:blur={modVote} id="adsf">
+		<input type="number" bind:value={komad.votes} on:keypress={keypress} on:blur={modVote} id="adsf">
 		{:else}
 		<h2>{komad.votes}</h2>
 		{/if}
