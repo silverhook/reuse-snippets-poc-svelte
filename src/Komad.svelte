@@ -97,7 +97,7 @@
 		{#if ad}
 		<div class="triangles">
 			<a href="https://www.youtube.com/results?search_query={komad.naslov}" target="_blank"><Triange yt={true}></Triange></a>
-			<a href="http://d.oliwerix.com:1234/down/{komad.naslov}" download><Triange toggle={true}></Triange></a>
+			<a href="https://d.oliwerix.com/down/{komad.naslov}" download><Triange toggle={true}></Triange></a>
 		</div>
 
 			<h2 on:click={destruct} class="button red noselect">x</h2>
