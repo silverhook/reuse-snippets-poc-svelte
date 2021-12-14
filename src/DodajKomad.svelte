@@ -16,12 +16,12 @@
     const dispatch = createEventDispatcher();
     const toggleSort = () => {sort.set(!$sort)}
     function dodaj() {
-        naslov = naslov.trim()
+        //naslov = naslov.trim().substring(0,25)
         if(naslov == "admin")
             admin.set(!$admin);
         else
             if(naslov != "")
-                dispatch('novKomad', {"naslov":naslov.substring(0, 25), "votes":1});
+                dispatch('novKomad', {"naslov":naslov,"altnaslov":naslov});
         naslov = ""
     }
 </script>
