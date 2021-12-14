@@ -47,8 +47,11 @@
 		overflow: hidden;
 		text-overflow:ellipsis;
 	}
-	h2 {
-		align-self: flex-end;
+	div.voting h1 {
+		width: 2em;
+		text-align: center;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 	div.voting {
 		display: flex;
@@ -61,10 +64,9 @@
 	.button {
 		color: #E7E7E7;
 		opacity: 0.3;
-		background-color: rgb(0, 0, 0);
-		border-radius: 50%;
-		width: 1.5em;
-		height: 1.5em;
+		/* background-color: rgb(0, 0, 0); */
+		width: 1.6em;
+		height: 1.6em;
 		padding: 0em;
 		text-align: center;
 	}
@@ -79,17 +81,13 @@
 		color: red;
 		transition: ease-in-out 0.1s;
 	}
-	.red {
-		background-color: rgb(209, 55, 55);;
-	}
-	input[type="text"] {
-		width: fit-content;
-		max-width: 100%;
-	}
 	input[type="number"] {
+		height: 0.9em;
 		width: 3em;
 	}
-	
+	img{
+		margin: auto;
+	}
 
 	.triangles {
 		display: flex;
@@ -105,20 +103,21 @@
 	{/if}
 	<span></span>
 	<div class="voting" >
-		<h2 on:click={addVote} class="button noselect">+</h2>
+		<img src="static/+.png" on:click={addVote} class="button noselect" alt="+">
 		{#if ad}
+
 		<input type="number" bind:value={komad.votes} on:keypress={keypress} on:blur={modKom} id="adsf">
 		{:else}
-		<h2 class="noselect">{komad.votes}</h2>
+		<h1 class="noselect">{komad.votes}</h1>
 		{/if}
-		<h2 on:click={remVote} class="button noselect">-</h2>
+		<img src="static/-.png" on:click={remVote} class="button noselect" alt="-">
+
 		{#if ad}
 		<div class="triangles">
 			<a href="https://www.youtube.com/results?search_query={komad.altnaslov}" target="_blank"><Triange yt={true} /></a>
 			<a href="/down/{komad.altnaslov}" download><Triange toggle={true} /></a>
 		</div>
-
-			<h2 on:click={destruct} class="button red noselect">x</h2>
+			<img src="static/x.png" on:click={destruct} class="button noselect" alt="x">
 		{/if}
 	</div>
 
