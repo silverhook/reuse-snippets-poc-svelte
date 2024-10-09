@@ -1,3 +1,9 @@
+/*!
+ * SPDX-SnippetBegin
+ * SPDX-SnippetCopyrightText: © 2021 Oliver Wagner <oliverix@oliverix.com>
+ * SPDX-License-Identifier: MIT
+ */
+
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
@@ -77,3 +83,5 @@ export default {
         clearScreen: false
     }
 };
+
+/*! SPDX-SnippetEnd */

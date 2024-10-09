@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: © 2019 Jane Hack <jane@hack.example>
+SPDX-License-Identifier: BSD-3-Clause
+-->
+
 <style>
     .text {
         min-width: 20%;

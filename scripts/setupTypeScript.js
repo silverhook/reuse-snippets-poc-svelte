@@ -1,3 +1,9 @@
+/*!
+ * SPDX-SnippetBegin
+ * SPDX-SnippetCopyrightText: 2024 Hacke R. McRandom <hacker@mcrandom.example>
+ * SPDX-License-Identifier: 0BSD
+ */
+
 // @ts-check
 
 /** This script modifies the project to support TS code in .svelte files like:
@@ -119,3 +125,5 @@ console.log("Converted to TypeScript.")
 if (fs.existsSync(path.join(projectRoot, "node_modules"))) {
   console.log("\nYou will need to re-run your dependency manager to get started.")
 }
+
+/*! SPDX-SnippetEnd */

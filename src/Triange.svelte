@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Oliver Wagner <oliwerix@oliwerix.com>
+SPDX-License-Identifier: MIT
+-->
+
 <script>
     export let toggle = false;
     export let yt = false;

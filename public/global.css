@@ -1,3 +1,9 @@
+/*!
+ * SPDX-SnippetBegin
+ * SPDX-SnippetCopyrightText: © 2000 Millenium Bug <y2k@example.web>
+ * SPDX-License-Identifier: W3C
+ */
+
 :root {
     --border-radius: 4px;
 }
@@ -113,3 +119,5 @@ button:not(:disabled):active {
 button:focus {
     border-color: #666;
 }
+
+/*! SPDX-SnippetEnd */

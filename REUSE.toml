@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: Matija Šuklje <matija@suklje.email>
+# SPDX-License-Identifier: 0BSD
+
+version = 1
+
+[[annotations]]
+path = ["public/**.png"]
+SPDX-FileCopyrightText = "© 2001 New Icons Ltd. <https://imaginarycompany.example>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["package-lock.json", "package.json"]
+SPDX-FileCopyrightText = "nobody"
+SPDX-License-Identifier = "CC0-1.0"
