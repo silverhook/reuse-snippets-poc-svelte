@@ -1,5 +1,6 @@
-<!--
-SPDX-FileCopyrightText: Oliver Wagner <oliwerix@oliwerix.com>
+<!--!
+SPDX-SnippetBegin
+SPDX-SnippetCopyrightText: Oliver Wagner <oliwerix@oliwerix.com>
 SPDX-License-Identifier: MIT
 -->
 
@@ -29,3 +30,5 @@ SPDX-License-Identifier: MIT
 <div class="{toggle?'rotated':''} {yt?'yt red':''}">
     ▼
 </div>
+
+<!--! SPDX-SnippetEnd -->

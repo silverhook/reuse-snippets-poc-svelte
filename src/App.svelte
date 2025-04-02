@@ -1,5 +1,6 @@
-<!--
-SPDX-FileCopyrightText: © 2020 Jane Hack <jane@hack.example>
+<!--!
+SPDX-SnippetBegin
+SPDX-SnippetCopyrightText: © 2020 Jane Hack <jane@hack.example>
 SPDX-License-Identifier: BSD-3-Clause
 -->
 
@@ -71,3 +72,5 @@ SPDX-License-Identifier: BSD-3-Clause
 		margin-top: auto;
 }
 </style>
+
+<!--! SPDX-SnippetEnd -->
